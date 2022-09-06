@@ -13,7 +13,7 @@ import java.io.IOException;
 @Controller
 @RequestMapping("/upload")
 public class FileUploadController {
-    @Value("${custom.genFileDirPath}")
+    @Value("/Users/gimseonghyeon/Desktop/project/temp/app10")
     private String genFileDirPath;
 
     @RequestMapping("")
