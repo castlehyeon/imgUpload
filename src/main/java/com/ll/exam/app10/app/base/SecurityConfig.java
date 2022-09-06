@@ -11,7 +11,13 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/**").permitAll();
+//        http.authorizeRequests().antMatchers("/**").permitAll();
+        /*시큐리티 토큰 끄기*/
+        http
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/**")
+                .permitAll();
         return http.build();
     }
 }
