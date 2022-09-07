@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/menu_list.css}">
+    <title>사용자 정보</title>
+    <style>
+        .field-error {
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+<h2>사용자 정보</h2>
+<div class="row row-cols-1 row-cols-sm-2 g-3">
+                    <h5 th:text="${userInfo.loginId}" class="card-title">유저아이디</h5>
+                    <h5 th:text="${userInfo.name}" class="card-title">유저이름</h5>
+</div>
+</body>
+</html>

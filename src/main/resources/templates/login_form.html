@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css">
+    <title>관리자 메뉴 페이지</title>
+    <style>
+        .field-error {
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+<h2>Member Login</h2>
+<form th:action="@{/member/join}" th:object="${loginFormDto}" method="post">
+    <div class="mb-3">
+        <label for="loginId" class="form-label">사용자ID</label>
+        <input type="text" th:field="*{loginId}" th:value="${session.ownerId}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">비밀번호</label>
+        <input type="password" th:field="*{password1}" class="form-control">
+    </div>
+    <div class="mb-3">
+    <label for="name" class="form-label">사용자 이름</label>
+    <input type="text" th:field="*{name}" class="form-control">
+    </div>
+    <button type="submit" class="float-end btn btn-info btn-sm my-2">로그인</button>
+</form>
+</body>
+</html>
