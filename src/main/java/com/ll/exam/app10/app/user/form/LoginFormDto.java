@@ -9,4 +9,6 @@ public class LoginFormDto {
     private String loginId;
     private String password1;
     private String name;
+    private String email;
+    private String profileImg;
 }

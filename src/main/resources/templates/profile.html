@@ -15,9 +15,11 @@
 </head>
 <body>
 <h2>사용자 정보</h2>
-<div class="row row-cols-1 row-cols-sm-2 g-3">
-                    <h5 th:text="${userInfo.loginId}" class="card-title">유저아이디</h5>
-                    <h5 th:text="${userInfo.name}" class="card-title">유저이름</h5>
+<img class="profile-img" th:src="@{|/gen/${userInfo.profileImg}|}">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-sm-3 g-3">
+                    <span>유저아이디</span><h5 th:text="${userInfo.loginId}" class="card-title">유저아이디</h5>
+                    <span>유저이름</span><h5 th:text="${userInfo.name}" class="card-title">유저이름</h5>
+                    <span>유저이메일</span><h5 th:text="${userInfo.email}" class="card-title">유저이름</h5>
 </div>
 </body>
 </html>
