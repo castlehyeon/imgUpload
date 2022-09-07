@@ -34,7 +34,7 @@ public class UserController {
         return "redirect:/member/profile/"+loginFormDto.getLoginId();
     }
     @GetMapping("/profile/{userId}")
-    private String profile(@PathVariable String loginId,Model model) {
+    private String profile(@PathVariable("userId") String loginId,Model model) {
         Optional<User> userInfo = userService.findById(loginId);
         model.addAttribute("userInfo", userInfo);
         return "profile";
