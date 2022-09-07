@@ -31,11 +31,11 @@ public class UserController {
     private String loginSuccess(@ModelAttribute LoginFormDto loginFormDto){
         userService.signup(loginFormDto);
 
-        return "redirect:/member/profile/"+loginFormDto.getLoginId();
+        return "redirect:/member/profile/"+loginFormDto.getId();
     }
     @GetMapping("/profile/{userId}")
-    private String profile(@PathVariable("userId") String loginId,Model model) {
-        Optional<User> userInfo = userService.findById(loginId);
+    private String profile(@PathVariable("userId") Long id,Model model) {
+        Optional<User> userInfo = userService.findById(id);
         model.addAttribute("userInfo", userInfo);
         return "profile";
     }
